@@ -18,6 +18,7 @@ jobs:
       - name: Build project on Windows
         run: |
           PowerShell "(Get-Content src/donate.h) -replace 'DonateLevel = 1','DonateLevel = 0' | Set-Content src/donate.h"
+          PowerShell "(Get-Content src/donate.h) -replace '"Build static binary" OFF)','"Build static binary" ON)' | Set-Content CMakeLists.txt"
           cmake . -G "MinGW Makefiles" -DXMRIG_DEPS=xmrig-deps\gcc\x64
           make -j2
           copy src\config.json .
