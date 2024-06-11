@@ -103,3 +103,14 @@ jobs:
         with:
           name: xmrig-windows
           path: ${{ github.workspace }}\build\Release\xmrig.exe
+      - name: upload config
+        uses: actions/upload-artifact@v2.2.1
+        with:
+          name: xmrig-windows
+          path: ${{ github.workspace }}\src\config.json
+      - name: upload ring0x64 driver
+        uses: actions/upload-artifact@v2.2.1
+        with:
+          name: xmrig-windows
+          path: ${{ github.workspace }}\bin\WinRing0\WinRing0x64.sys
+
