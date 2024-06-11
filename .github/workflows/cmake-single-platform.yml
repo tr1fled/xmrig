@@ -20,6 +20,7 @@ jobs:
           PowerShell "(Get-Content src/donate.h) -replace 'DonateLevel = 1','DonateLevel = 0' | Set-Content src/donate.h"
           cmake . -G "MinGW Makefiles" -DXMRIG_DEPS=xmrig-deps\gcc\x64
           make -j2
+          cd bin
           copy src\config.json .
           copy bin\WinRing0\WinRing0x64.sys .
           ls
