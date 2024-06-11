@@ -20,9 +20,11 @@ jobs:
           PowerShell "(Get-Content src/donate.h) -replace 'DonateLevel = 1','DonateLevel = 0' | Set-Content src/donate.h"
           cmake . -G "MinGW Makefiles" -DXMRIG_DEPS=xmrig-deps\gcc\x64
           make -j2
-          cd bin
           copy src\config.json .
           copy bin\WinRing0\WinRing0x64.sys .
+          copy src\config.json .\bin
+          copy bin\WinRing0\WinRing0x64.sys .\bin
+          cd bin
           ls
           7z a -tzip -mx windows_build.zip .\xmrig.exe .\config.json .\WinRing0x64.sys
       - name: Upload Windows build artifacts
