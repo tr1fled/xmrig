@@ -57,6 +57,7 @@ jobs:
           ./build_deps.sh
       - name: build xmrig
         run: |
+          sed -i 's/DonateLevel = 1/DonateLevel = 0/g' src/donate.h
           if [ ! -d "build" ]; then
             mkdir build
           fi
@@ -92,6 +93,7 @@ jobs:
           Expand-Archive -Path master.zip -DestinationPath c:\xmrig-deps\
       - name: build
         run: |
+          PowerShell "(Get-Content src/donate.h) -replace 'DonateLevel = 1','DonateLevel = 0' | Set-Content src/donate.h"
           mkdir build
           cd build
           cmake .. -G "Visual Studio 16 2019" -A x64 -DXMRIG_DEPS=c:\xmrig-deps\xmrig-deps-master\msvc2019\x64
